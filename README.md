@@ -11,17 +11,17 @@ Challange: A fan has to run when the heating is powered, to improve the heat-up-
 
 ### Schematic
 
-Arduino +5V -> Power (+5V)
-Arduino GND  -> POWER (GND)
+    Arduino +5V -> Power (+5V)
+    Arduino GND  -> POWER (GND)
 
-100k Thermistor (Pin A) -> Power (+5V)
-100k Thermistor (Pin B) -> Arduino A0
+    100k Thermistor (Pin A) -> Power (+5V)
+    100k Thermistor (Pin B) -> Arduino A0
 
-100k Resisistor (Pin A) -> Arduino A0
-100k Resisistor (Pin B) -> POWER (GND)
+    100k Resisistor (Pin A) -> Arduino A0
+    100k Resisistor (Pin B) -> POWER (GND)
 
-MOSFET (G) -> Arduino D0
-MOSFET (S) -> POWER (GND)
+    MOSFET (G) -> Arduino D0
+    MOSFET (S) -> POWER (GND)
 
-Load (+) -> Power +5V
-Load (-) -> MOSFET (D)
+    Load (+) -> Power +5V
+    Load (-) -> MOSFET (D)
