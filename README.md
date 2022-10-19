@@ -7,7 +7,7 @@ Challange: A fan has to run when the heating is powered, to improve the heat-up-
 - 1x Arduino nano
 - 1x 100k 1% Resisitor
 - 1x 100k ptc (3D Printer heatbed sensor)
-- 1x N-Channel MOSFET which is full-on @5V GS-Voltage, i.E. Si4776DY
+- 1x N-Channel MOSFET which is full-on @5V GS-Voltage, i.E. [AO3400](http://www.aosmd.com/pdfs/datasheet/ao3400.pdf)
 
 ### Schematic
 

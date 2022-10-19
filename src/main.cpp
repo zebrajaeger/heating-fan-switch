@@ -1,7 +1,7 @@
 #include <Arduino.h>
 
 #define THERMISTOR_PIN 0
-#define SWITCH_PIN 1
+#define SWITCH_PIN 2
 #define LED_PIN LED_BUILTIN
 #define SWITCH_TEMPARATURE_C 25
 #define TEMPARATURE_HYSTERESIS 1
@@ -13,6 +13,7 @@ void setup() {
   Serial.begin(115200);
   pinMode(LED_PIN, OUTPUT);
   pinMode(SWITCH_PIN, OUTPUT);
+  digitalWrite(SWITCH_PIN, false);
 }
 
 float readTemperature() {
