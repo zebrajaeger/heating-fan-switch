@@ -4,7 +4,7 @@
 #define SWITCH_PIN 2
 #define LED_PIN LED_BUILTIN
 #define SWITCH_TEMPARATURE_C 25
-#define TEMPARATURE_HYSTERESIS 1
+#define TEMPARATURE_HYSTERESIS 2
 #define LOOP_DELAY 1000
 
 bool switchState = false;
@@ -40,7 +40,19 @@ void loop() {
   } else {
     if (t >= (SWITCH_TEMPARATURE_C + TEMPARATURE_HYSTERESIS)) {
       switchState = true;
+      Serial.println("Fade Switch ON");
+      digitalWrite(LED_BUILTIN, true);
+      int32_t fadeInPeriods = 500;
+      int32_t periodDurationUs = 10000;
+      for (int32_t i = 0; i < fadeInPeriods; ++i) {
+        int32_t tOn = (i * periodDurationUs) / fadeInPeriods;
+        digitalWrite(SWITCH_PIN, true);
+        delayMicroseconds(tOn);
+        digitalWrite(SWITCH_PIN, false);
+        delayMicroseconds(periodDurationUs - i);
+      }
       Serial.println("Switch ON");
+      digitalWrite(LED_BUILTIN, false);
     }
   }
 
